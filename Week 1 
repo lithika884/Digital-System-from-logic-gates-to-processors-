@@ -1,0 +1,18 @@
+Digital system 
+  set of interconnected object that realize function such as a set of input, output signal and their relation
+ Eg:Control of a boiler
+
+
+Digital sytem description
+ 
+ 1 . Functional description
+        Provide relationship between input and output. 
+    They are classified as two types. They are
+(a) Explicit function (b) Implicit function
+
+2. Structural description
+   
+       Provide information about internal structure using components. 
+Eg:1 digit adder
+
+3.
