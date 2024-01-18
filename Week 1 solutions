@@ -1,0 +1,131 @@
+Q1. Which of the following statements are true? Check all that apply.
+
+A)Any digital system can be specified using a functional description or a structural description.
+B)The functional description of a digital system depicts its internal structure.
+C)Any block in a digital circuit can be described hierarchically until a level of simplicity that allows its synthesis using a predefined catalog of components is achieved.
+D)All blocks of a hierarchical description must be specified by the same type of description (functional or structural).
+
+ANSWER : C
+
+
+Q2. In a stress test for elite athletes a physical system is used to measure the performance of the individual. Indicate which of these signals are analog signals:
+
+A)Activity level (accelerometer) ⇒ Type: Current, Range: [0-7 mA]
+B)Temperature ⇒ Type: Temperature, Range: from 18ºC to 22ºC (only integer and half-integer values are measured)
+C)O2 Saturation ⇒ Type: Voltage, Range: [1-5 mV]
+D)Respiratory Rate ⇒ Type: Numerical; Range: integers from 8 to 40.
+E)VO2 ⇒ Type: Liters / minute; Range: [2-7.5 l / min].
+F)Performance ⇒ Type: Real number; Range: [0-1]
+
+ANSWER : A , C, E, F
+
+Q3. Following the previous question, indicate which of the following signals are digital signals.
+
+A)Temperature ⇒ Type: Temperature, Range: from 18ºC to 22ºC (only integer and half-integer values are measured
+B)O2 Saturation ⇒ Type: Voltage, Range: [1-5 mV]
+C)Heart rate ⇒ Type: Numeric; Range: Integers from 35 to 300
+D)Performance ⇒ Type: Real number; Range: [0-1]
+E)ECG (Electrocardiogram) ⇒ Type: Voltage; Range: [0.5-4 mV].
+F)Alarm ⇒ Type: Binary digit; Range: {0,1}.
+
+ANSWER : A , C , F.
+
+Q5. The pseudocode shown in figure functionally describes the chronometer of lesson 2.1.The update procedure updates the values of h, m, s and t whenever a clock pulse arrives (ref_positive_edge signal).
+
+Which of the following pieces of pseudocode correctly implement the update procedure?. Mark all that apply.  
+
+1 loop
+2 if reset=ON then h <= 0; m <= 0; s <= 0; t <= 0;
+3 else if start = ON then
+4 while stop = OFF loop
+5 if ref_positive_edge = TRUE then update(h, m, s, t);
+6 end if;
+7 end loop;
+8 end if;
+9 end if;
+10 end loop;
+
+A)
+1 t <= t + 1;
+2 if t = 10 then t <= 0;add_one_second <= 1;
+3 else add_one_second <= 0;
+4 end if;
+5 s <= s + add_one_second;
+6 if s = 60 then s <= 0; add_one_minute <= 1;
+7 else add_one_minute <= 0;
+8 end if;
+9 m <= m + add_one_minute;
+10 if m = 60 then m <= 0; add_one_hour <= 1;
+
+B)
+1 if t = 9 then t <= 0; add_one_second <= 1;
+2 else add_one_second <= 0;
+3 end if;
+4 t <= t+1;
+5 if s = 60 then s <= 0; add_one_minute <= 1;
+6 else add_one_minute <= 0;
+7 end if;
+8 s <= s + add_one_second;
+9 if m = 60 then m <= 0; add_one_hour <= 1;
+10 else add_one_hour <= 0;
+
+C)
+1 t <= t + 1;
+2 if t = 10 then t <= 0; s <= s + 1; end if;
+3 if s = 60 then s <= 0; m <= m + 1; end if;
+4 if m = 60 then m <= 0; h <= h+1; end if;
+5 if h = 24 then h <= 0; end if;
+
+ANSWER : A, C
+
+
+Q6. Consider a system with three input signals:
+
+ref, a square wave with a period of 1 microsecond(1), and
+two natural number a and b
+The system generates a square wave, f, with period equal to (a + b) microseconds, as shown in figure.
+
+
+Which of the following algorithms describe the system?
+
+(1) Variable “ref_positive_edge” takes the value TRUE when a positive edge of signal “ref” arrives, and FALSE otherwise.
+A)
+1 loop
+2 f <= 1; count <= 0;
+3 for i in 1 to a loop
+4 if ref_positive_edge = TRUE then count <= count + 1;
+5 end if;
+6 end loop;
+7 f <= 0; count <= 0;for i in 1 to b loop
+8 if ref_positive_edge = TRUE then count <= count + 1;
+9 end if;
+10 end loop;
+
+B)
+1 loop
+2 f <= 1; count <= a; while count > 0 loop
+3 if ref_positive_edge = TRUE then count <= count – 1; end if; end loop; f <= 0; count <= b; while count > 4 0 loop
+5 if ref_positive_edge = TRUE then count <= count – 1;
+6 end if;
+C)
+1 loop
+2 f <= 1; while count > 0 loop
+3 if ref_positive_edge = TRUE then a <= a – 1; end if; end loop; f <= 0; while count > 0 loop
+4 if ref_positive_edge = TRUE then b <= b – 1;
+5 end if;
+
+ANSWER: B
+
+Q7. Mark the correct statement:
+
+A)Digital electronic systems only work with supply voltages of 0 and 1V.
+B)In CMOS circuits (circuits built with CMOS gates) logical values of 1 and 0 are defined as the passage or non-passage of current, respectively.
+C)Logical values of 0 and 1 are defined as a voltage close to 0 V and a voltage close to the circuit supply voltage respectively.
+D)In a 5V powered circuit, the logical value 1 is defined as a voltage of exactly 5V.
+
+ANSWER : D
+
+Q8. Fill in the above table so that it describes the behavior of the following circuit:
+
+(Enter the 0s and 1s separated by a blank. For example, if the result was the one shown below, the answer should be 0 0 1 1 0 0 1 0)
+ANSWER : 1 0 1 0 1 0 0 0
